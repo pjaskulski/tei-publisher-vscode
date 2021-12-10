@@ -4,6 +4,7 @@ import { Metagrid } from "./connectors/metagrid";
 import { GooglePlaces } from "./connectors/gplaces";
 import { GND } from "./connectors/gnd";
 import { GeoNames } from "./connectors/geonames";
+import { WikiData } from "./connectors/wikidata";
 import { Registry, RegistryResult, RegistryResultItem } from './registry';
 
 /**
@@ -80,6 +81,9 @@ export class RegistryPanel implements vscode.WebviewViewProvider {
 					break;
 				case 'geonames':
 					registry = new GeoNames(config);
+					break;
+				case 'wikidata':
+				        registry = new WikiData(config);
 					break;
 				default:
 					registry = new Metagrid(config);
