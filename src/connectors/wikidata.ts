@@ -18,7 +18,6 @@ export class WikiData extends Registry {
     async query(key:string) {
         const results:RegistryResultItem[] = [];
         
-        // const response = await axios.get(`http://api.geonames.org/searchJSON?formatted=true&q=${encodeURIComponent(key)}&maxRows=100&&username=${this.user}&style=full`);
         const response = await axios.get(`https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(key)}&language=pl&format=json`)
         if (response.status !== 200) {
             return {
