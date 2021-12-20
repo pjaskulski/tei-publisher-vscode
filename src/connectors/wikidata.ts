@@ -37,7 +37,7 @@ export class WikiData extends Registry {
             results.push(result);
         });
         return {
-            totalItems: json.totalResultsCount,
+            totalItems: results.length,
             items: results
         };
     }
